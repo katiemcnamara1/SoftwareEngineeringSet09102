@@ -72,6 +72,7 @@ namespace Textreader
                 }
 
                 smsNo = value;
+                
             }
         }
     }
