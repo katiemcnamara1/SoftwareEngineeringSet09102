@@ -16,3 +16,21 @@
 \\napier-mail.napier.ac.uk\students\School of Computing\User Data\40280565\My Profile\Desktop\Textreader\Textreader\bin\Debug\Newtonsoft.Json.dll
 \\napier-mail.napier.ac.uk\students\School of Computing\User Data\40280565\My Profile\Desktop\Textreader\Textreader\bin\Debug\Newtonsoft.Json.xml
 \\napier-mail.napier.ac.uk\students\School of Computing\User Data\40280565\My Profile\Desktop\Textreader\Textreader\obj\Debug\Textreader.csproj.CopyComplete
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\bin\Debug\Textreader.exe.config
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\bin\Debug\Textreader.exe
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\bin\Debug\Textreader.pdb
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\bin\Debug\Newtonsoft.Json.dll
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\bin\Debug\Newtonsoft.Json.xml
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.csprojAssemblyReference.cache
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\MainWindow.g.cs
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\App.g.cs
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader_MarkupCompile.cache
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader_MarkupCompile.lref
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\MainWindow.baml
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.g.resources
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.Properties.Resources.resources
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.csproj.GenerateResource.cache
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.csproj.CoreCompileInputs.cache
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.csproj.CopyComplete
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.exe
+H:\Github\SoftwareEngineeringSet09102\Textreader\Textreader\obj\Debug\Textreader.pdb

@@ -21,13 +21,24 @@ namespace Textreader
         public string TweetBody
         {
             get { return tweetBody; }
-            set { tweetBody = value; }
+            set
+            {   if (value.Length < 141)
+                    tweetBody = value;
+                else
+                    throw new ArgumentException("Tweet body too long.");
+            }
         }
 
         public string TwitterHandle
         {
             get { return twitterHandle; }
-            set { twitterHandle = value; }
+            set
+            {
+                if (value.Length < 16)
+                    twitterHandle = value;
+                else
+                    throw new ArgumentException("Twitter handle too long.");
+            }
         }
 
     }

@@ -142,36 +142,6 @@ namespace Textreader
 
         }
 
-        private string url_search(string sentence)
-        {
-            try
-            {
-                foreach (string word in sentence.Split(' '))
-                {
-                    if (word.StartsWith("http:") || word.StartsWith("https:"))
-                    {
-                        string newM = sentence.Replace(word, "<URL Quarantined>");
-                        sentence = newM;
-                        foreach (string word1 in (sentence).Split(' '))
-                        {
-                            if (!quarantineList.Contains(word))
-                            {
-                                quarantineList.Add(word);
-                                URLList.Items.Add(word);
-                            }
-                        }
-                    }
-                }
-                return sentence;
-            }
-            catch
-            {
-                return sentence;
-            }
-        }
-
-
-
         private void emailSendBtn_Click(object sender, RoutedEventArgs e)
         {
             {
@@ -323,150 +293,124 @@ namespace Textreader
 
         private void twitterSendBtn_Click(object sender, RoutedEventArgs e)
         {
-           
+            //try
+            //{
+                string twitterOutput = "";
 
-            string twitterOutput = "";
-          
             //clear mentions list box
             mentionList.Items.Clear();
             items.Clear();
             //check handle "@"    
-            string inputHandle = tweetSender.Text;
-            string inputBody = tweetBody.Text;
-            listView.Visibility = Visibility.Visible;
-            //read in abreviatons csv
+            string sender1 = tweetSender.Text;
+            string body = tweetBody.Text;
 
+            //read in abreviatons csv
 
             Data readCSV = new Data();
             abbreviations = readCSV.fileRead();
 
-            char c = inputHandle[0];
-            if (c.Equals('@'))
+            if (sender1[0].Equals('@'))
             {
-                //check handle length
-                if (inputHandle.Length > 15)
+                //split string into array
+                Data splitString = new Data();
+                List<string> bodyArray = new List<string>();
+                bodyArray = splitString.Input(body);
+
+                //find mentions
+                foreach (string temp in bodyArray)
                 {
-                    MessageBox.Show("The twitter handle is too many characters");
+                    if (temp[0].Equals('@'))
+                    {
+                        mentions.Add(temp);
+                        mentionList.Items.Add(temp);
+                    }
+
                 }
-                else
+                //find hashtags
+                items.Clear();
+                foreach (string tag in bodyArray)
                 {
-                    //check tweet lengths
-                    if (inputBody.Length > 140)
+                    int counter = 0;
+                    if (tag[0].Equals('#'))
                     {
-                        MessageBox.Show("The twitter body is too long");
+                        try
+                        {
+                            hashtags.Add(tag, "1");
+                        }
+                        catch
+                        {
+                            counter = Int32.Parse(hashtags[tag]);
+                            counter++; ;
+                            string counterString = counter.ToString();
+                            hashtags[tag] = counterString;
+                        }
                     }
-                    else
+                }
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
+                foreach (KeyValuePair<string, string> kv in hashtags)
+                {
+                    listBox1.Items.Add(kv.Key);
+                    listBox2.Items.Add(kv.Value);
+                }
+
+
+                //FILE output for hashtags
+                //create a new objct to output for each item in the dictionary
+                List<hashtag> hashS = new List<hashtag>();
+                foreach (KeyValuePair<string, string> kv in hashtags)
+                {
+
+                    hashtag hashOut = new hashtag
                     {
-                        //split string into array
-                        Data splitString = new Data();
-                        List<string> bodyArray = new List<string>();
-                        bodyArray = splitString.Input(inputBody);
-
-
-                        //find mentions
-                        foreach (string temp in bodyArray)
-                        {
-                            try
-                            {
-                                if (temp[0].Equals('@'))
-                                {
-                                    mentions.Add(temp);
-                                    mentionList.Items.Add(temp);
-                                }
-                            }
-                            catch
-                            {
-
-                            }
-
-                        }
-                        //find hashtags
-                        items.Clear();
-                        foreach(string tag in bodyArray)
-                        {
-                            int counter = 0;
-                            if (tag[0].Equals('#'))
-                            {
-                                try
-                                {
-                                    hashtags.Add(tag, "1");
-                                }
-                                catch
-                                {
-                                    counter = Int32.Parse(hashtags[tag]);
-                                    counter++; ;
-                                    string counterString = counter.ToString();
-                                    hashtags[tag] = counterString;
-                                }
-                            }
-                        }
-                        foreach (KeyValuePair<string, string> kv in hashtags)
-                        {
-                            items.Add(new hashtag { Hash = kv.Key, TagCounter = kv.Value });
-                        }
-
-
-                        listView.ItemsSource = items;
-                        listView.Items.Refresh();
-
-
-
-                        //FILE output for hashtags
-                        //create a new objct to output for each item in the dictionary
-                        foreach (KeyValuePair<string, string> kv in hashtags)
-                        {
-                            hashtag hashOut = new hashtag
-                            {
-                                Hash = kv.Key,
-                                TagCounter = kv.Value
-                            };
-                            // serialize JSON directly to a file
-                            using (StreamWriter file = File.CreateText(@"../../../hashtags.json"))
-                            {
-                                JsonSerializer serializer = new JsonSerializer();
-                                serializer.Serialize(file, hashOut);
-                            }
-
-                        }
-
-                        //abbreviation hunt
-                        Data abvCheck = new Data();
-                        twitterOutput = abvCheck.abbreviations(bodyArray, abbreviations);
-
-                        //output
-
-                        label6.Visibility = Visibility.Visible;
-                        mentionList.Visibility = Visibility.Visible;
-                        
-                        
-                        emailSubject.Text = (inputHandle);
-                        emailBody.Text = twitterOutput;
-
-                        //create a new objct to output for each item in the dictionary
-                        twitter fileOut = new twitter
-                        {
-                            TweetHeading = msgHeading,
-                            TwitterHandle = inputHandle,
-                            TweetBody = inputBody
-
-                        };
-                        // serialize JSON directly to a file
-                        using (StreamWriter file = File.AppendText(@"../../../output.json"))
-                        {
-                            JsonSerializer serializer = new JsonSerializer();
-                            serializer.Serialize(file, fileOut);
-                        }
-
-
+                        Hash = kv.Key,
+                        TagCounter = kv.Value
+                    };
+                    hashS.Add(hashOut);
+                    // serialize JSON directly to a file
+                    using (StreamWriter file = File.CreateText(@"../../../hashtags.json"))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        serializer.Serialize(file, hashS);
                     }
+
+                }
+
+                //abbreviation hunt
+                Data abvCheck = new Data();
+                twitterOutput = abvCheck.abbreviations(bodyArray, abbreviations);
+
+                //output
+                label6.Visibility = Visibility.Visible;
+                mentionList.Visibility = Visibility.Visible;
+                emailSubject.Text = (sender1);
+                emailBody.Text = twitterOutput;
+
+                //create a new objct to output for each item in the dictionary
+                twitter fileOut = new twitter
+                {
+                    TweetHeading = msgHeading,
+                    TwitterHandle = sender1,
+                    TweetBody = body
+                };
+                // serialize JSON directly to a file
+                using (StreamWriter file = File.AppendText(@"../../../output.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, fileOut);
                 }
             }
             else
             {
                 MessageBox.Show("Twitter Handle is incorrect format");
             }
-        }
-        }
+            /*   }
+             catch (Exception ee)
+              {
+                  MessageBox.Show(ee.Message);
+              }*/
+            }
     }
+}
 
 

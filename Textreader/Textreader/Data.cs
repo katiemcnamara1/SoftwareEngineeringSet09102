@@ -112,8 +112,7 @@ namespace Textreader
             }
             return output;
         }
-
-
+        
         public Boolean validD(string x)
         {
             try
@@ -191,8 +190,7 @@ namespace Textreader
                 return false;
             }
         }
-
-
+        
         //valiates sort code
         public string CSort(List<string> x)
         {
@@ -296,8 +294,7 @@ namespace Textreader
             }
 
         }
-
-
+        
         //creates a list of urls quarinteened
         public List<String> urlList(List<string> input)
         {
