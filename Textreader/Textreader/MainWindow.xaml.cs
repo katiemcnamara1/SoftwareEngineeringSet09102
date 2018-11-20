@@ -26,14 +26,7 @@ namespace Textreader
     public partial class MainWindow : Window
     {
 
-        public static bool first = true;
-        public static bool first1 = true;
-        public static bool first2 = true;
-        public static bool eFirst = true;
-        public static bool eFirst1 = true;
-        public static bool eFirst2 = true;
-        public static bool tFirst = true;
-        public static bool tFirst1 = true;
+     
         public static bool inputValid = true;
         public static bool valdiEmail = false;
         private string msgHeading = "temp";
@@ -410,6 +403,36 @@ namespace Textreader
                   MessageBox.Show(ee.Message);
               }*/
             }
+
+        
+
+
+       
+
+        private void messageHeader_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((messageHeader.Text != "") && (messageHeader.Text.Length ==1 ))
+            {
+                string x = messageHeader.Text[0].ToString();
+                switch (x)
+                {
+                    case "S":
+                        MessageBox.Show("SMS");
+                        break;
+                    case "E":
+                        MessageBox.Show("Email");
+                        break;
+                    case "T":
+                        MessageBox.Show("twitter");
+                        break;
+                    default:
+                        MessageBox.Show("invalid");
+                        break;
+
+                }
+            }       
+                
+        }
     }
 }
 

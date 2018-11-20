@@ -5,53 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Textreader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="928.478" Width="1538.076">
-    <Grid Margin="0,0,-15,13">
-        <ComboBox x:Name="areaCode" HorizontalAlignment="Left" Margin="53,310,0,0" VerticalAlignment="Top" Width="82" Height="28"/>
-        <Label x:Name="label" Content="Napier Bank" HorizontalAlignment="Left" Height="72" Margin="356,14,0,0" VerticalAlignment="Top" Width="308" FontSize="48"/>
-        <TextBox x:Name="messageHeader" HorizontalAlignment="Left" Height="32" Margin="431,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="30" Margin="308,97,0,0" TextWrapping="Wrap" Text="Please enter your message header below!" VerticalAlignment="Top" Width="388" FontSize="20"/>
-        <TextBox x:Name="smsBody" HorizontalAlignment="Left" Height="119" Margin="170,311,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="phoneNo" HorizontalAlignment="Left" Height="28" Margin="53,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
-        <Button x:Name="smsSendbtn" Content="Send" HorizontalAlignment="Left" Height="32" Margin="59,430,0,0" VerticalAlignment="Top" Width="67" FontSize="18" Click="smsSendbtn_Click"/>
-        <Label x:Name="label1" Content="SMS&#xD;&#xA;" HorizontalAlignment="Left" Height="44" Margin="136,244,0,0" VerticalAlignment="Top" Width="71" FontSize="20"/>
-        <Label x:Name="label2" Content="EMAIL" HorizontalAlignment="Left" Height="34" Margin="455,248,0,0" VerticalAlignment="Top" Width="83" FontSize="20"/>
-        <Label x:Name="label3" Content="TWEET" HorizontalAlignment="Left" Height="43" Margin="691,250,0,0" VerticalAlignment="Top" Width="128" FontSize="20"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="25" Margin="237,155,0,0" TextWrapping="Wrap" Text="Message Header:" VerticalAlignment="Top" Width="178" FontSize="20"/>
-        <TextBox x:Name="senderEmail" HorizontalAlignment="Left" Height="29" Margin="418,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149"/>
-        <TextBox x:Name="subjectEmail" HorizontalAlignment="Left" Height="29" Margin="418,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149"/>
-        <TextBox x:Name="bodyEmail" HorizontalAlignment="Left" Height="138" Margin="410,387,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="169"/>
-        <Button x:Name="emailSendBtn" Content="Send" HorizontalAlignment="Left" Height="32" Margin="454,547,0,0" VerticalAlignment="Top" Width="73" FontSize="20" Click="emailSendBtn_Click"/>
-        <TextBox x:Name="tweetSender" HorizontalAlignment="Left" Height="29" Margin="646,304,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149"/>
-        <TextBox x:Name="tweetBody" HorizontalAlignment="Left" Height="138" Margin="645,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="169"/>
-        <Button x:Name="twitterSendBtn" Content="Tweet" HorizontalAlignment="Left" Height="32" Margin="701,519,0,0" VerticalAlignment="Top" Width="73" FontSize="20" Click="twitterSendBtn_Click"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="71" Margin="18,635,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="342" Margin="354,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="342" Margin="625,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="31" Margin="22,527,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
-        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="31" Margin="26,589,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
-        <ListBox Name="URLList" HorizontalAlignment="Left" Height="122" Margin="1288,296,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label x:Name="label4" Content="URLs" HorizontalAlignment="Left" Height="58" Margin="1307,246,0,0" VerticalAlignment="Top" Width="71" FontSize="20"/>
-        <ListBox x:Name="trendingList" HorizontalAlignment="Left" Height="122" Margin="1130,304,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label x:Name="label5" Content="Trending" HorizontalAlignment="Left" Height="57" Margin="1130,250,0,0" VerticalAlignment="Top" Width="111" FontSize="20"/>
-        <ListBox x:Name="mentionList" HorizontalAlignment="Left" Height="163" Margin="964,301,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="label6" Content="Mentions" HorizontalAlignment="Left" Height="45" Margin="973,248,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
-        <ListBox x:Name="SIRlistbox" HorizontalAlignment="Left" Height="139" Margin="1286,467,0,0" VerticalAlignment="Top" Width="222"/>
-        <Label x:Name="label7" Content="SIR List" HorizontalAlignment="Left" Height="32" Margin="1308,423,0,0" VerticalAlignment="Top" Width="130" FontSize="20"/>
-        <TextBox x:Name="emailSender" HorizontalAlignment="Left" Height="29" Margin="378,637,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="228"/>
-        <TextBox x:Name="emailSubject" HorizontalAlignment="Left" Height="27" Margin="378,692,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232"/>
-        <TextBox x:Name="emailBody" HorizontalAlignment="Left" Height="68" Margin="376,756,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="239"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="102" Margin="794,714,0,0" VerticalAlignment="Top" Width="258">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Hashtag" DisplayMemberBinding="{Binding hashtag}" Width="100"/>
-                    <GridViewColumn Header="Count" DisplayMemberBinding="{Binding count}"/>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="100" Margin="1095,645,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListBox x:Name="listBox2" HorizontalAlignment="Left" Height="100" Margin="1316,591,0,0" VerticalAlignment="Top" Width="100"/>
+        Title="MainWindow" Height="786.074" Width="1096.335">
+    <Grid Margin="0,0,38,13">
+        <ComboBox x:Name="areaCode" HorizontalAlignment="Left" Margin="21,295,0,0" VerticalAlignment="Top" Width="82" Height="28"/>
+        <Label x:Name="label" Content="Napier Bank" HorizontalAlignment="Left" Height="72" Margin="132,26,0,0" VerticalAlignment="Top" Width="308" FontSize="48"/>
+        <TextBox x:Name="messageHeader" HorizontalAlignment="Left" Height="32" Margin="207,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20"  TextChanged="messageHeader_TextChanged"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="30" Margin="84,109,0,0" TextWrapping="Wrap" Text="Please enter your message header below!" VerticalAlignment="Top" Width="388" FontSize="20"/>
+        <TextBox x:Name="smsBody" HorizontalAlignment="Left" Height="119" Margin="138,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="phoneNo" HorizontalAlignment="Left" Height="28" Margin="21,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="smsSendbtn" Content="Send" HorizontalAlignment="Left" Height="32" Margin="27,415,0,0" VerticalAlignment="Top" Width="67" FontSize="18" Click="smsSendbtn_Click"/>
+        <Label x:Name="label1" Content="SMS;" HorizontalAlignment="Left" Height="44" Margin="104,229,0,0" VerticalAlignment="Top" Width="71" FontSize="20"/>
+        <Label x:Name="label2" Content="EMAIL" HorizontalAlignment="Left" Height="34" Margin="377,227,0,0" VerticalAlignment="Top" Width="83" FontSize="20"/>
+        <Label x:Name="label3" Content="TWEET" HorizontalAlignment="Left" Height="43" Margin="605,229,0,0" VerticalAlignment="Top" Width="128" FontSize="20"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="25" Margin="13,167,0,0" TextWrapping="Wrap" Text="Message Header:" VerticalAlignment="Top" Width="178" FontSize="20"/>
+        <TextBox x:Name="senderEmail" HorizontalAlignment="Left" Height="29" Margin="340,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="subjectEmail" HorizontalAlignment="Left" Height="29" Margin="340,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="bodyEmail" HorizontalAlignment="Left" Height="138" Margin="332,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+        <Button x:Name="emailSendBtn" Content="Send" HorizontalAlignment="Left" Height="32" Margin="376,526,0,0" VerticalAlignment="Top" Width="73" FontSize="20" Click="emailSendBtn_Click"/>
+        <TextBox x:Name="tweetSender" HorizontalAlignment="Left" Height="29" Margin="560,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="tweetBody" HorizontalAlignment="Left" Height="138" Margin="559,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+        <Button x:Name="twitterSendBtn" Content="Tweet" HorizontalAlignment="Left" Height="32" Margin="615,498,0,0" VerticalAlignment="Top" Width="73" FontSize="20" Click="twitterSendBtn_Click"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="83" Margin="9,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="342" Margin="302,241,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1"/>
+
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="31" Margin="10,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="31" Margin="17,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+        <ListBox Name="URLList" HorizontalAlignment="Left" Height="122" Margin="823,81,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="label4" Content="URLs" HorizontalAlignment="Left" Height="58" Margin="836,28,0,0" VerticalAlignment="Top" Width="71" FontSize="20"/>
+
+        <Label x:Name="label5" Content="Trending" HorizontalAlignment="Left" Height="57" Margin="914,269,0,0" VerticalAlignment="Top" Width="111" FontSize="20" RenderTransformOrigin="-0.555,1.87"/>
+        <ListBox x:Name="mentionList" HorizontalAlignment="Left" Height="140" Margin="752,326,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="label6" Content="Mentions" HorizontalAlignment="Left" Height="45" Margin="758,264,0,0" VerticalAlignment="Top" Width="158" FontSize="20" RenderTransformOrigin="1.305,-1.753"/>
+        <ListBox x:Name="SIRlistbox" HorizontalAlignment="Left" Height="139" Margin="559,77,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label x:Name="label7" Content="SIR List" HorizontalAlignment="Left" Height="32" Margin="558,36,0,0" VerticalAlignment="Top" Width="130" FontSize="20"/>
+        <TextBox x:Name="emailSender" Visibility ="Visible" HorizontalAlignment="Left" Height="29" Margin="320,607,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <TextBox x:Name="emailSubject" Visibility ="Visible" HorizontalAlignment="Left" Height="27" Margin="567,607,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232"/>
+        <TextBox x:Name="emailBody" Visibility ="Visible" HorizontalAlignment="Left" Height="68" Margin="422,654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="115" Margin="880,333,0,0" VerticalAlignment="Top" Width="97"/>
+        <ListBox x:Name="listBox2" HorizontalAlignment="Left" Height="106" Margin="1004,333,0,0" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="342" Margin="540,244,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1"/>
 
 
 

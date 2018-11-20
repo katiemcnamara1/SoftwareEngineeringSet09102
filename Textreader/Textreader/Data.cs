@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Textreader
@@ -31,7 +27,7 @@ namespace Textreader
             return Output;
         }
 
-        //checking UK number length 
+        
         public Boolean PhoneNumberUK(string phoneNumberUK)
         {
             if (phoneNumberUK.Length == 10)
@@ -50,7 +46,7 @@ namespace Textreader
             return Output;
         }
 
-        //checking ES number length 
+        
         public Boolean PhoneNumberES(string phoneNumberES)
         {
             if (phoneNumberES.Length == 9)
@@ -62,7 +58,7 @@ namespace Textreader
                 return false;
             }
         }
-        //checking Chinese number length 
+       
         public Boolean phoneNumberChina(string phoneNumberChina)
         {
             if (phoneNumberChina.Length == 11)
@@ -126,7 +122,7 @@ namespace Textreader
             }
         }
 
-        //validate lengths of stuff
+        
         public Boolean emailLengths(string subject, string body)
         {
             if (subject.Length > 20)
@@ -149,7 +145,7 @@ namespace Textreader
 
             }
         }
-        //validates SIR
+       
         public bool SIRCheck(List<string> input)
         {
             if (input.Count == 2)
@@ -177,7 +173,7 @@ namespace Textreader
                 return false;
             }
         }
-        //vaidates email
+
         public Boolean validateEmail(string input)
         {
             try
@@ -191,7 +187,7 @@ namespace Textreader
             }
         }
         
-        //valiates sort code
+  
         public string CSort(List<string> x)
         {
             bool temp = false;
@@ -224,7 +220,7 @@ namespace Textreader
             }
         }
 
-        //validates Nature
+      
         public string CNature(List<String> x)
         {
             int temp = 0;
@@ -295,7 +291,7 @@ namespace Textreader
 
         }
         
-        //creates a list of urls quarinteened
+       
         public List<String> urlList(List<string> input)
         {
             List<string> output = new List<string>();
@@ -309,7 +305,7 @@ namespace Textreader
             return output;
         }
 
-        //quarintines urls
+        
         
 
 
